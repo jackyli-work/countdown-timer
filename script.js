@@ -106,6 +106,9 @@ const runCountdown = (eventDate) => {
 
     updateCountdown({
       days: timeLeftDate.getDate() - 1,
+      //a bug here, will calculate 8 hours extra.
+      //hours: timeLeftDate.getHours(),
+      //add the timezoneoffset, voila!
       hours: timeLeftDate.getHours() + timeLeftDate.getTimezoneOffset()/60,
       minutes: timeLeftDate.getMinutes(),
       seconds: timeLeftDate.getSeconds(),
